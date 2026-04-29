@@ -1906,3 +1906,17 @@ img { max-width: 100%; display: block; }
   .cd-num { font-size: 1.6rem; }
   .cd-label { font-size: 0.6rem; }
 }
+
+.cart-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  padding: 0.6rem 0;
+}
+
+#cartItems {
+  background: #101010;
+  border: 1px solid var(--border-gold);
+  padding: 1rem;
+  border-radius: 10px;
+}
