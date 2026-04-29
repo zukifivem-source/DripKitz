@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — DripKitz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="subpage">
+
+  <nav class="navbar">
+    <a href="../index.html" class="logo">DRIP<span>KITZ</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="shop.html" data-i18n="nav_shop">Shop</a></li>
+      <li><a href="about.html" data-i18n="nav_over">Over ons</a></li>
+      <li><a href="contact.html" class="active" data-i18n="nav_contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-toggle" id="langToggle">EN</button>
+      <button class="cart-btn" id="cartBtn">
+        <span>🛒</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html" data-i18n="nav_home">Home</a>
+    <a href="shop.html" data-i18n="nav_shop">Shop</a>
+    <a href="about.html" data-i18n="nav_over">Over ons</a>
+    <a href="contact.html" data-i18n="nav_contact">Contact</a>
+  </div>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3 data-i18n="cart_title">Winkelwagen</h3>
+      <button class="cart-close" id="cartClose">×</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty" data-i18n="cart_empty">Je winkelwagen is leeg.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span data-i18n="cart_total">Totaal</span>
+        <span id="cartTotal">€0,00</span>
+      </div>
+      <button class="btn-primary" data-i18n="cart_checkout">Afrekenen</button>
+    </div>
+  </aside>
+
+  <!-- HEADER -->
+  <section class="page-header">
+    <div class="page-header-bg"></div>
+    <div class="page-header-content">
+      <p class="hero-tag reveal" data-i18n="contact_tag">— Hit Us Up</p>
+      <h1 class="page-title reveal" data-i18n="contact_title">CONTACT</h1>
+      <p class="page-sub reveal" data-i18n="contact_sub">Vragen, samenwerkingen of gewoon een praatje? We zijn er voor je.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section class="contact-grid">
+    <div class="contact-info reveal">
+      <h2 data-i18n="ci_title">PAK CONTACT OP</h2>
+      <p data-i18n="ci_text">We reageren meestal binnen 24 uur. Voor snelle vragen, DM ons op Instagram.</p>
+
+      <div class="contact-blocks">
+        <a href="mailto:info@dripkitz.nl" class="contact-block">
+          <span class="cb-icon">✉️</span>
+          <div>
+            <h4>Email</h4>
+            <p>info@dripkitz.nl</p>
+          </div>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="contact-block">
+          <span class="cb-icon">📸</span>
+          <div>
+            <h4>Instagram</h4>
+            <p>@dripkitz</p>
+          </div>
+        </a>
+        <a href="https://wa.me/31000000000" target="_blank" class="contact-block">
+          <span class="cb-icon">💬</span>
+          <div>
+            <h4>WhatsApp</h4>
+            <p>+31 6 00 00 00 00</p>
+          </div>
+        </a>
+        <div class="contact-block">
+          <span class="cb-icon">📍</span>
+          <div>
+            <h4 data-i18n="cb_loc">Locatie</h4>
+            <p>Groningen, NL</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap reveal">
+      <form class="contact-form" id="contactForm">
+        <h3 data-i18n="cf_title">Stuur een bericht</h3>
+        <div class="form-row">
+          <input type="text" placeholder="Naam" data-i18n-placeholder="cf_name" required />
+          <input type="email" placeholder="Email" data-i18n-placeholder="cf_email" required />
+        </div>
+        <input type="text" placeholder="Onderwerp" data-i18n-placeholder="cf_subject" required />
+        <textarea placeholder="Jouw bericht..." data-i18n-placeholder="cf_msg" rows="6" required></textarea>
+        <button type="submit" class="btn-primary" data-i18n="cf_btn">Versturen</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="section-header reveal">
+      <p class="section-tag" data-i18n="faq_tag">— Veelgestelde vragen</p>
+      <h2 data-i18n="faq_title">FAQ</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span data-i18n="faq1_q">Hoe lang duurt levering?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p data-i18n="faq1_a">Bestellingen voor 16:00 worden dezelfde dag verzonden via PostNL. Levering binnen Nederland duurt meestal 1-2 werkdagen.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span data-i18n="faq2_q">Kan ik retourneren?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p data-i18n="faq2_a">Ja, je hebt 14 dagen bedenktijd. Het product moet ongebruikt zijn en in originele verpakking. Retour is gratis binnen Nederland.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span data-i18n="faq3_q">Welke betaalmethodes accepteren jullie?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p data-i18n="faq3_a">iDEAL, Bancontact, creditcard (Visa/Mastercard) en Klarna voor achteraf betalen.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span data-i18n="faq4_q">Zijn de kits officieel?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p data-i18n="faq4_a">Onze kits zijn premium fan versies. Ze zien er hetzelfde uit als officiële kits, maar tegen een veel scherpere prijs.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span data-i18n="faq5_q">Komen er meer landen bij?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p data-i18n="faq5_a">Zeker weten. We breiden de collectie continu uit. Schrijf je in voor onze nieuwsbrief om als eerste te horen over nieuwe drops.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="logo">DRIP<span>KITZ</span></p>
+        <p data-i18n="footer_sub">Jouw WK kit dealer. Snel. Betaalbaar. Strak.</p>
+        <div class="social-links">
+          <a href="https://instagram.com" target="_blank" class="social-btn">Instagram</a>
+          <a href="mailto:info@dripkitz.nl" class="social-btn">Email</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer_shop">Shop</h4>
+        <a href="shop.html" data-i18n="nav_shop">Collectie</a>
+        <a href="shop.html" data-i18n="footer_maten">Maatgids</a>
+        <a href="shop.html" data-i18n="footer_levering">Levering & Retour</a>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer_info">Info</h4>
+        <a href="about.html" data-i18n="nav_over">Over ons</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
+        <a href="contact.html" data-i18n="footer_faq">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 DripKitz — <span data-i18n="footer_rights">Alle rechten voorbehouden</span></p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

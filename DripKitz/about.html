@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Over ons — DripKitz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="subpage">
+
+  <nav class="navbar">
+    <a href="../index.html" class="logo">DRIP<span>KITZ</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="shop.html" data-i18n="nav_shop">Shop</a></li>
+      <li><a href="about.html" class="active" data-i18n="nav_over">Over ons</a></li>
+      <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-toggle" id="langToggle">EN</button>
+      <button class="cart-btn" id="cartBtn">
+        <span>🛒</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html" data-i18n="nav_home">Home</a>
+    <a href="shop.html" data-i18n="nav_shop">Shop</a>
+    <a href="about.html" data-i18n="nav_over">Over ons</a>
+    <a href="contact.html" data-i18n="nav_contact">Contact</a>
+  </div>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3 data-i18n="cart_title">Winkelwagen</h3>
+      <button class="cart-close" id="cartClose">×</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty" data-i18n="cart_empty">Je winkelwagen is leeg.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span data-i18n="cart_total">Totaal</span>
+        <span id="cartTotal">€0,00</span>
+      </div>
+      <button class="btn-primary" data-i18n="cart_checkout">Afrekenen</button>
+    </div>
+  </aside>
+
+  <!-- HEADER -->
+  <section class="page-header">
+    <div class="page-header-bg"></div>
+    <div class="page-header-content">
+      <p class="hero-tag reveal" data-i18n="about_tag">— Onze Story</p>
+      <h1 class="page-title reveal" data-i18n="about_title">OVER ONS</h1>
+      <p class="page-sub reveal" data-i18n="about_sub">Twee vrienden uit Groningen die het anders aanpakken.</p>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story">
+    <div class="story-content reveal">
+      <p class="section-tag" data-i18n="story_tag">— Het verhaal</p>
+      <h2 data-i18n="story_title">VAN PASSIE NAAR MERK</h2>
+      <p data-i18n="story_p1">DripKitz begon zoals veel goede ideeën beginnen: tijdens een potje FIFA. We zagen vrienden tientjes uitgeven aan kits van twijfelachtige sites, en dachten — dit kan beter.</p>
+      <p data-i18n="story_p2">Geen tussenpartijen, geen onnodige marges. Wij regelen direct, jij krijgt premium fan kits voor een eerlijke prijs. Voor het WK 2026 starten we met de meest gevraagde nationale teams in Nederland.</p>
+      <p data-i18n="story_p3">Na het WK groeien we door naar streetwear en algemene merkkleding. DripKitz wordt jouw plek voor scherp geprijsde, kwalitatieve drip — voetbal of niet.</p>
+    </div>
+    <div class="story-visual reveal">
+      <div class="story-card">
+        <span class="story-card-num">01</span>
+        <h3 data-i18n="val1_title">Geen Bullshit</h3>
+        <p data-i18n="val1_text">Eerlijke prijzen, eerlijke producten, eerlijke communicatie.</p>
+      </div>
+      <div class="story-card">
+        <span class="story-card-num">02</span>
+        <h3 data-i18n="val2_title">Snelle Service</h3>
+        <p data-i18n="val2_text">We staan klaar via WhatsApp, Instagram of mail. Reactie binnen 24u.</p>
+      </div>
+      <div class="story-card">
+        <span class="story-card-num">03</span>
+        <h3 data-i18n="val3_title">Voor de Fans</h3>
+        <p data-i18n="val3_text">Door fans, voor fans. We snappen wat je zoekt en wat het waard mag zijn.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline-section">
+    <div class="section-header reveal">
+      <p class="section-tag" data-i18n="tl_tag">— Roadmap</p>
+      <h2 data-i18n="tl_title">DE WEG VOORUIT</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-marker"></div>
+        <div class="tl-content">
+          <span class="tl-date">Q2 2026</span>
+          <h3 data-i18n="tl1_title">Launch WK Collectie</h3>
+          <p data-i18n="tl1_text">Turkije, Marokko en Nederland kits live, op tijd voor de openingswedstrijd.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-marker"></div>
+        <div class="tl-content">
+          <span class="tl-date">Q3 2026</span>
+          <h3 data-i18n="tl2_title">Uitbreiden Kits</h3>
+          <p data-i18n="tl2_text">Meer landen, away kits en retro klassiekers toevoegen aan de collectie.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-marker"></div>
+        <div class="tl-content">
+          <span class="tl-date">Q4 2026</span>
+          <h3 data-i18n="tl3_title">Streetwear Drop</h3>
+          <p data-i18n="tl3_text">Eigen DripKitz merk lijn met hoodies, tees en accessoires.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-marker"></div>
+        <div class="tl-content">
+          <span class="tl-date">2027</span>
+          <h3 data-i18n="tl4_title">Pop-Up Store</h3>
+          <p data-i18n="tl4_text">Eerste fysieke pop-up locatie in Groningen. Drip live ervaren.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="stats-grid reveal">
+      <div class="stat-big">
+        <span class="stat-num" data-target="3">0</span>
+        <span class="stat-label" data-i18n="stat1">Landen</span>
+      </div>
+      <div class="stat-big">
+        <span class="stat-num" data-prefix="€" data-target="29">€0</span>
+        <span class="stat-label" data-i18n="stat2">Vanaf</span>
+      </div>
+      <div class="stat-big">
+        <span class="stat-num" data-suffix="u" data-target="48">0u</span>
+        <span class="stat-label" data-i18n="stat3">Levering</span>
+      </div>
+      <div class="stat-big">
+        <span class="stat-num" data-suffix="%" data-target="100">0%</span>
+        <span class="stat-label" data-i18n="stat4">Tevredenheid</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner reveal">
+      <h2 data-i18n="cta_title">KLAAR VOOR JOUW DRIP?</h2>
+      <p data-i18n="cta_sub">Bekijk de collectie en pak jouw kit voordat ze op zijn.</p>
+      <a href="shop.html" class="btn-primary" data-i18n="cta_btn">Naar de Shop</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="logo">DRIP<span>KITZ</span></p>
+        <p data-i18n="footer_sub">Jouw WK kit dealer. Snel. Betaalbaar. Strak.</p>
+        <div class="social-links">
+          <a href="https://instagram.com" target="_blank" class="social-btn">Instagram</a>
+          <a href="mailto:info@dripkitz.nl" class="social-btn">Email</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer_shop">Shop</h4>
+        <a href="shop.html" data-i18n="nav_shop">Collectie</a>
+        <a href="shop.html" data-i18n="footer_maten">Maatgids</a>
+        <a href="shop.html" data-i18n="footer_levering">Levering & Retour</a>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer_info">Info</h4>
+        <a href="about.html" data-i18n="nav_over">Over ons</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
+        <a href="contact.html" data-i18n="footer_faq">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 DripKitz — <span data-i18n="footer_rights">Alle rechten voorbehouden</span></p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

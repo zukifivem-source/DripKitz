@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop — DripKitz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="subpage">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="../index.html" class="logo">DRIP<span>KITZ</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="shop.html" class="active" data-i18n="nav_shop">Shop</a></li>
+      <li><a href="about.html" data-i18n="nav_over">Over ons</a></li>
+      <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-toggle" id="langToggle">EN</button>
+      <button class="cart-btn" id="cartBtn">
+        <span>🛒</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html" data-i18n="nav_home">Home</a>
+    <a href="shop.html" data-i18n="nav_shop">Shop</a>
+    <a href="about.html" data-i18n="nav_over">Over ons</a>
+    <a href="contact.html" data-i18n="nav_contact">Contact</a>
+  </div>
+
+  <!-- CART -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3 data-i18n="cart_title">Winkelwagen</h3>
+      <button class="cart-close" id="cartClose">×</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty" data-i18n="cart_empty">Je winkelwagen is leeg.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span data-i18n="cart_total">Totaal</span>
+        <span id="cartTotal">€0,00</span>
+      </div>
+      <button class="btn-primary" data-i18n="cart_checkout">Afrekenen</button>
+    </div>
+  </aside>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="page-header-bg"></div>
+    <div class="page-header-content">
+      <p class="hero-tag reveal" data-i18n="shop_tag">— Volledige Collectie</p>
+      <h1 class="page-title reveal" data-i18n="shop_title">SHOP</h1>
+      <p class="page-sub reveal" data-i18n="shop_sub">Alle WK 2026 kits. Officieel ogend, scherpe prijs, snelle levering.</p>
+    </div>
+  </section>
+
+  <!-- FILTERS -->
+  <section class="filters">
+    <div class="filter-group reveal">
+      <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Alle</button>
+      <button class="filter-btn" data-filter="turkije" data-i18n="filter_tr">Turkije</button>
+      <button class="filter-btn" data-filter="marokko" data-i18n="filter_ma">Marokko</button>
+      <button class="filter-btn" data-filter="nederland" data-i18n="filter_nl">Nederland</button>
+    </div>
+    <div class="sort-group reveal">
+      <label data-i18n="sort_label">Sorteer:</label>
+      <select id="sortSelect">
+        <option value="popular" data-i18n="sort_pop">Populair</option>
+        <option value="low" data-i18n="sort_low">Prijs ↑</option>
+        <option value="high" data-i18n="sort_high">Prijs ↓</option>
+        <option value="new" data-i18n="sort_new">Nieuwste</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="shop-grid">
+    <div class="product-grid full-grid" id="productGrid"></div>
+  </section>
+
+  <!-- INFO BLOCKS -->
+  <section class="info-blocks">
+    <div class="info-block reveal">
+      <span class="info-icon">📦</span>
+      <h3 data-i18n="info1_title">Snelle levering</h3>
+      <p data-i18n="info1_text">Bestellingen voor 16:00 worden dezelfde dag verzonden via PostNL.</p>
+    </div>
+    <div class="info-block reveal">
+      <span class="info-icon">↩️</span>
+      <h3 data-i18n="info2_title">Retourneren</h3>
+      <p data-i18n="info2_text">Niet tevreden? 14 dagen bedenktijd, gratis retour binnen Nederland.</p>
+    </div>
+    <div class="info-block reveal">
+      <span class="info-icon">💳</span>
+      <h3 data-i18n="info3_title">Veilig betalen</h3>
+      <p data-i18n="info3_text">iDEAL, Bancontact, creditcard en Klarna achteraf betalen.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="logo">DRIP<span>KITZ</span></p>
+        <p data-i18n="footer_sub">Jouw WK kit dealer. Snel. Betaalbaar. Strak.</p>
+        <div class="social-links">
+          <a href="https://instagram.com" target="_blank" class="social-btn">Instagram</a>
+          <a href="mailto:info@dripkitz.nl" class="social-btn">Email</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer_shop">Shop</h4>
+        <a href="shop.html" data-i18n="nav_shop">Collectie</a>
+        <a href="shop.html" data-i18n="footer_maten">Maatgids</a>
+        <a href="shop.html" data-i18n="footer_levering">Levering & Retour</a>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer_info">Info</h4>
+        <a href="about.html" data-i18n="nav_over">Over ons</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
+        <a href="contact.html" data-i18n="footer_faq">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 DripKitz — <span data-i18n="footer_rights">Alle rechten voorbehouden</span></p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
