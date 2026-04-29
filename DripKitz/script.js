@@ -1,174 +1,60 @@
-// =========================================
-// DRIPKITZ — script.js
-// =========================================
+const PRODUCTS = [
+  {id:'ma-home',team:'marokko',name:'Marokko Thuis Kit',price:34.99,badge:'BESTSELLER'},
+  {id:'nl-home',team:'nederland',name:'Nederland Thuis Kit',price:34.99,badge:'HOT'},
+  {id:'tr-home',team:'turkije',name:'Turkije Thuis Kit',price:32.99,badge:'NIEUW'},
+  {id:'br-home',team:'brazilie',name:'Brazilië Thuis Kit',price:36.99,badge:'TOP'},
+  {id:'ar-away',team:'argentinie',name:'Argentinië Uit Kit',price:36.99,badge:'NIEUW'},
+  {id:'es-home',team:'spanje',name:'Spanje Thuis Kit',price:35.99,badge:'TOP'}
+];
+const KEY='dripkitz_cart_v2';
+const euro=n=>`€${n.toFixed(2).replace('.',',')}`;
+const cart=()=>JSON.parse(localStorage.getItem(KEY)||'[]');
+const setCart=v=>localStorage.setItem(KEY,JSON.stringify(v));
 
-// -----------------------------------------
-// TRANSLATIONS
-// -----------------------------------------
-const translations = {
-  nl: {
-    nav_collectie: "Collectie",
-    nav_over: "Over ons",
-    nav_contact: "Contact",
-    hero_tag: "WK 2026 — Exclusieve Kits",
-    hero_line1: "GAME DAY",
-    hero_line2: "DRIP",
-    hero_sub: "Scherp geprijsde fan kits. Snel geleverd. Klaar voor het grootste WK ooit.",
-    hero_cta: "Bekijk Collectie",
-    col_tag: "— Nieuwe Collectie",
-    col_title: "WK 2026 KITS",
-    badge_hot: "HOT",
-    badge_best: "BESTSELLER",
-    badge_new: "NIEUW",
-    prod_turkije: "Turkije Thuis Kit",
-    prod_turkije_desc: "WK 2026 — Fan Versie",
-    prod_marokko: "Marokko Thuis Kit",
-    prod_marokko_desc: "WK 2026 — Fan Versie",
-    prod_nederland: "Nederland Thuis Kit",
-    prod_nederland_desc: "WK 2026 — Fan Versie",
-    btn_cart: "+ Winkelwagen",
-    usp1: "Snelle levering",
-    usp2: "Scherpe prijzen",
-    usp3: "Alle maten beschikbaar",
-    usp4: "WK 2026 klaar",
-    over_tag: "— Wie zijn wij",
-    over_title: "OVER DRIPKITZ",
-    over_text1: "DripKitz is opgericht door twee vrienden die geloven dat iedereen betaalbaar kan supporteren voor zijn land. Geen overdreven prijzen, geen gedoe — gewoon strakke kits op tijd bij jou thuis.",
-    over_text2: "Voor het WK 2026 starten we met de meest gevraagde kits in Nederland: Turkije, Marokko en Oranje. Later groeien we door naar een volledig streetwear & merkkleding concept.",
-    stat1: "Landen",
-    stat2: "Vanaf",
-    stat3: "Levering",
-    footer_sub: "Jouw WK kit dealer. Snel. Betaalbaar. Strak.",
-    footer_shop: "Shop",
-    footer_maten: "Maatgids",
-    footer_levering: "Levering & Retour",
-    footer_info: "Info",
-    footer_rights: "Alle rechten voorbehouden",
-  },
-  en: {
-    nav_collectie: "Collection",
-    nav_over: "About",
-    nav_contact: "Contact",
-    hero_tag: "World Cup 2026 — Exclusive Kits",
-    hero_line1: "GAME DAY",
-    hero_line2: "DRIP",
-    hero_sub: "Affordable fan kits. Fast delivery. Ready for the biggest World Cup ever.",
-    hero_cta: "Shop Collection",
-    col_tag: "— New Collection",
-    col_title: "WORLD CUP 2026 KITS",
-    badge_hot: "HOT",
-    badge_best: "BESTSELLER",
-    badge_new: "NEW",
-    prod_turkije: "Turkey Home Kit",
-    prod_turkije_desc: "World Cup 2026 — Fan Version",
-    prod_marokko: "Morocco Home Kit",
-    prod_marokko_desc: "World Cup 2026 — Fan Version",
-    prod_nederland: "Netherlands Home Kit",
-    prod_nederland_desc: "World Cup 2026 — Fan Version",
-    btn_cart: "+ Add to Cart",
-    usp1: "Fast delivery",
-    usp2: "Sharp prices",
-    usp3: "All sizes available",
-    usp4: "World Cup 2026 ready",
-    over_tag: "— Who we are",
-    over_title: "ABOUT DRIPKITZ",
-    over_text1: "DripKitz was founded by two friends who believe everyone deserves to support their country in style — without paying crazy prices. No fuss, just clean kits delivered fast.",
-    over_text2: "For the 2026 World Cup we're starting with the most wanted kits in the Netherlands: Turkey, Morocco and Oranje. Later we'll expand into a full streetwear & brand clothing concept.",
-    stat1: "Nations",
-    stat2: "From",
-    stat3: "Delivery",
-    footer_sub: "Your World Cup kit dealer. Fast. Affordable. Clean.",
-    footer_shop: "Shop",
-    footer_maten: "Size Guide",
-    footer_levering: "Shipping & Returns",
-    footer_info: "Info",
-    footer_rights: "All rights reserved",
-  }
-};
-
-// -----------------------------------------
-// LANGUAGE TOGGLE
-// -----------------------------------------
-let currentLang = 'nl';
-
-function applyTranslations(lang) {
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (translations[lang][key]) {
-      el.textContent = translations[lang][key];
-    }
-  });
-  document.documentElement.lang = lang;
+function updateBadge(){
+  const c=cart().reduce((s,i)=>s+i.qty,0);
+  document.querySelectorAll('#cartCount').forEach(el=>el.textContent=c);
 }
 
-const langToggle = document.getElementById('langToggle');
-langToggle.addEventListener('click', () => {
-  currentLang = currentLang === 'nl' ? 'en' : 'nl';
-  langToggle.textContent = currentLang === 'nl' ? 'EN' : 'NL';
-  applyTranslations(currentLang);
-});
+function add(id){
+  const c=cart();
+  const hit=c.find(x=>x.id===id);
+  if(hit) hit.qty++; else c.push({id,qty:1});
+  setCart(c); updateBadge(); renderCart();
+}
 
-// -----------------------------------------
-// MOBILE MENU
-// -----------------------------------------
-const menuToggle = document.getElementById('menuToggle');
-const mobileMenu = document.getElementById('mobileMenu');
+function renderProducts(){
+  const el=document.getElementById('productGrid'); if(!el) return;
+  el.innerHTML=PRODUCTS.map(p=>`<article class="product" data-team="${p.team}"><span class="badge">${p.badge}</span><h3>${p.name}</h3><p class="muted">WK 2026 fan edition</p><div class="cart-total-row"><strong>${euro(p.price)}</strong><button class="btn btn-gold" data-add="${p.id}">+ Winkelwagen</button></div></article>`).join('');
+  el.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>add(b.dataset.add));
+}
 
-menuToggle.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-});
+function renderCart(){
+  const el=document.getElementById('cartItems'); const totalEl=document.getElementById('cartTotal');
+  if(!el||!totalEl) return;
+  const c=cart(); if(!c.length){el.innerHTML='<p class="muted">Je winkelwagen is leeg.</p>';totalEl.textContent='€0,00';return;}
+  let total=0;
+  el.innerHTML=c.map(i=>{const p=PRODUCTS.find(x=>x.id===i.id); if(!p) return ''; const sub=p.price*i.qty; total+=sub; return `<div class="cart-row"><span>${p.name} × ${i.qty}</span><strong>${euro(sub)}</strong></div>`}).join('');
+  totalEl.textContent=euro(total);
+}
 
-// Close mobile menu on link click
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-  });
-});
+function filters(){
+  const chips=[...document.querySelectorAll('.chip')]; if(!chips.length) return;
+  chips.forEach(ch=>ch.onclick=()=>{chips.forEach(c=>c.classList.remove('active')); ch.classList.add('active'); const f=ch.dataset.filter; document.querySelectorAll('.product').forEach(p=>p.style.display=(f==='all'||p.dataset.team===f)?'':'none');});
+}
 
-// -----------------------------------------
-// NAVBAR SCROLL EFFECT
-// -----------------------------------------
-window.addEventListener('scroll', () => {
-  const navbar = document.querySelector('.navbar');
-  if (window.scrollY > 50) {
-    navbar.style.borderBottomColor = 'rgba(212,175,55,0.3)';
-  } else {
-    navbar.style.borderBottomColor = 'rgba(212,175,55,0.15)';
-  }
-});
+function mobileMenu(){
+  const btn=document.getElementById('menuBtn'); const nav=document.getElementById('mainNav');
+  if(btn&&nav) btn.onclick=()=>nav.classList.toggle('open');
+}
 
-// -----------------------------------------
-// CART BUTTON FEEDBACK
-// -----------------------------------------
-document.querySelectorAll('.btn-cart').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const original = btn.textContent;
-    btn.textContent = currentLang === 'nl' ? '✓ Toegevoegd!' : '✓ Added!';
-    btn.style.background = 'var(--gold)';
-    btn.style.color = 'var(--black)';
-    setTimeout(() => {
-      btn.textContent = original;
-      btn.style.background = '';
-      btn.style.color = '';
-    }, 1500);
-  });
-});
+function reveal(){
+  const obs=new IntersectionObserver((entries)=>entries.forEach(e=>e.isIntersecting&&e.target.classList.add('visible')),{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+}
 
-// -----------------------------------------
-// SCROLL REVEAL
-// -----------------------------------------
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.product-card, .over-content, .usp').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-  observer.observe(el);
+document.addEventListener('DOMContentLoaded',()=>{
+  renderProducts(); renderCart(); filters(); mobileMenu(); reveal(); updateBadge();
+  const checkout=document.getElementById('checkoutForm');
+  if(checkout) checkout.addEventListener('submit',e=>{e.preventDefault(); setCart([]); updateBadge(); alert('Bedankt! Je bestelling is geplaatst (demo).'); location.href='index.html';});
 });

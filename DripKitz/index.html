@@ -3,210 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DripKitz — WK 2026 Kits</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <title>DripKitz | WK 2026 Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="site-header">
+    <a class="logo" href="index.html">DRIP<span>KITZ</span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="active">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">Over ons</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Winkelwagen <span id="cartCount" class="cart-pill">0</span></a>
+    </nav>
+    <button id="menuBtn" class="menu-btn">☰</button>
+  </header>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <a href="#" class="logo">DRIP<span>KITZ</span></a>
-    <ul class="nav-links">
-      <li><a href="#collectie" data-i18n="nav_collectie">Collectie</a></li>
-      <li><a href="#over" data-i18n="nav_over">Over ons</a></li>
-      <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-    </ul>
-    <button class="lang-toggle" id="langToggle">EN</button>
-    <button class="menu-toggle" id="menuToggle">☰</button>
-  </nav>
-
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#collectie" data-i18n="nav_collectie">Collectie</a>
-    <a href="#over" data-i18n="nav_over">Over ons</a>
-    <a href="#contact" data-i18n="nav_contact">Contact</a>
-  </div>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <p class="hero-tag" data-i18n="hero_tag">WK 2026 — Exclusieve Kits</p>
-      <h1 class="hero-title">
-        <span class="line1" data-i18n="hero_line1">GAME DAY</span>
-        <span class="line2" data-i18n="hero_line2">DRIP</span>
-      </h1>
-      <p class="hero-sub" data-i18n="hero_sub">Scherp geprijsde fan kits. Snel geleverd. Klaar voor het grootste WK ooit.</p>
-      <a href="#collectie" class="btn-primary" data-i18n="hero_cta">Bekijk Collectie</a>
-    </div>
-    <div class="hero-badge">WK<br/>2026</div>
-  </section>
-
-  <!-- TICKER -->
-  <div class="ticker">
-    <div class="ticker-inner">
-      <span>🇹🇷 TURKIJE</span><span>★</span>
-      <span>🇲🇦 MAROKKO</span><span>★</span>
-      <span>🇳🇱 NEDERLAND</span><span>★</span>
-      <span>WK 2026</span><span>★</span>
-      <span>🇹🇷 TURKIJE</span><span>★</span>
-      <span>🇲🇦 MAROKKO</span><span>★</span>
-      <span>🇳🇱 NEDERLAND</span><span>★</span>
-      <span>WK 2026</span><span>★</span>
-      <span>🇹🇷 TURKIJE</span><span>★</span>
-      <span>🇲🇦 MAROKKO</span><span>★</span>
-      <span>🇳🇱 NEDERLAND</span><span>★</span>
-      <span>WK 2026</span><span>★</span>
-    </div>
-  </div>
-
-  <!-- COLLECTIE -->
-  <section class="collectie" id="collectie">
-    <div class="section-header">
-      <p class="section-tag" data-i18n="col_tag">— Nieuwe Collectie</p>
-      <h2 data-i18n="col_title">WK 2026 KITS</h2>
-    </div>
-    <div class="product-grid">
-
-      <!-- Turkije -->
-      <div class="product-card">
-        <div class="product-img turkije">
-          <div class="flag">🇹🇷</div>
-          <div class="kit-visual">
-            <div class="kit-body turkije-kit"></div>
-          </div>
-          <div class="product-badge" data-i18n="badge_hot">HOT</div>
-        </div>
-        <div class="product-info">
-          <h3 data-i18n="prod_turkije">Turkije Thuis Kit</h3>
-          <p class="product-desc" data-i18n="prod_turkije_desc">WK 2026 — Fan Versie</p>
-          <div class="product-bottom">
-            <span class="price">€29,99</span>
-            <button class="btn-cart" data-i18n="btn_cart">+ Winkelwagen</button>
-          </div>
-        </div>
+  <section class="hero section reveal">
+    <div>
+      <p class="kicker">Official Fan Shop • WK 2026</p>
+      <h1>De vetste WK 2026 kits <br>voor echte fans.</h1>
+      <p>DripKitz is jouw one-stop shop voor premium fan kits van het WK 2026. Snel geleverd, top kwaliteit en eerlijke prijs.</p>
+      <div class="hero-actions">
+        <a href="shop.html" class="btn btn-gold">Shop nu</a>
+        <a href="about.html" class="btn btn-outline">Onze story</a>
       </div>
-
-      <!-- Marokko -->
-      <div class="product-card featured">
-        <div class="product-img marokko">
-          <div class="flag">🇲🇦</div>
-          <div class="kit-visual">
-            <div class="kit-body marokko-kit"></div>
-          </div>
-          <div class="product-badge bestseller" data-i18n="badge_best">BESTSELLER</div>
-        </div>
-        <div class="product-info">
-          <h3 data-i18n="prod_marokko">Marokko Thuis Kit</h3>
-          <p class="product-desc" data-i18n="prod_marokko_desc">WK 2026 — Fan Versie</p>
-          <div class="product-bottom">
-            <span class="price">€29,99</span>
-            <button class="btn-cart" data-i18n="btn_cart">+ Winkelwagen</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Nederland -->
-      <div class="product-card">
-        <div class="product-img nederland">
-          <div class="flag">🇳🇱</div>
-          <div class="kit-visual">
-            <div class="kit-body nederland-kit"></div>
-          </div>
-          <div class="product-badge nieuw" data-i18n="badge_new">NIEUW</div>
-        </div>
-        <div class="product-info">
-          <h3 data-i18n="prod_nederland">Nederland Thuis Kit</h3>
-          <p class="product-desc" data-i18n="prod_nederland_desc">WK 2026 — Fan Versie</p>
-          <div class="product-bottom">
-            <span class="price">€29,99</span>
-            <button class="btn-cart" data-i18n="btn_cart">+ Winkelwagen</button>
-          </div>
-        </div>
-      </div>
-
+    </div>
+    <div class="hero-card float">
+      <h3>🔥 Bestsellers</h3>
+      <p>Marokko, Nederland, Brazilië en meer.</p>
+      <a href="shop.html">Bekijk collectie →</a>
     </div>
   </section>
 
-  <!-- USP STRIP -->
-  <section class="usp-strip">
-    <div class="usp">
-      <span class="usp-icon">⚡</span>
-      <span data-i18n="usp1">Snelle levering</span>
-    </div>
-    <div class="usp">
-      <span class="usp-icon">💰</span>
-      <span data-i18n="usp2">Scherpe prijzen</span>
-    </div>
-    <div class="usp">
-      <span class="usp-icon">👕</span>
-      <span data-i18n="usp3">Alle maten beschikbaar</span>
-    </div>
-    <div class="usp">
-      <span class="usp-icon">🏆</span>
-      <span data-i18n="usp4">WK 2026 klaar</span>
+  <section class="section reveal">
+    <h2>Waarom DripKitz?</h2>
+    <div class="grid-3">
+      <article class="card"><h3>⚡ Snelle levering</h3><p>Op werkdagen voor 16:00 besteld = meestal volgende dag in huis.</p></article>
+      <article class="card"><h3>💸 Eerlijke prijzen</h3><p>Geen absurde marges. Gewoon goede kits voor een eerlijke prijs.</p></article>
+      <article class="card"><h3>🏆 WK Focus</h3><p>Volledige focus op dit WK met continue nieuwe drops en landen.</p></article>
     </div>
   </section>
 
-  <!-- OVER ONS -->
-  <section class="over" id="over">
-    <div class="over-content">
-      <p class="section-tag" data-i18n="over_tag">— Wie zijn wij</p>
-      <h2 data-i18n="over_title">OVER DRIPKITZ</h2>
-      <p data-i18n="over_text1">DripKitz is ontstaan vanuit het idee dat supporters hun land moeten kunnen steunen zonder te veel te betalen. Geen overdreven prijzen, geen gedoe — gewoon strakke kits, snel en betrouwbaar bij jou thuis.</p>
-      <p data-i18n="over_text2">Voor het WK 2026 ligt de focus op de meest gevraagde kits in Nederland: Turkije, Marokko en Oranje. Daarna wordt het assortiment uitgebreid richting een breder streetwear- en merkkledingconcept.</p>
-      <div class="over-stats">
-        <div class="stat">
-          <span class="stat-num">3</span>
-          <span class="stat-label" data-i18n="stat1">Landen</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">€29</span>
-          <span class="stat-label" data-i18n="stat2">Vanaf</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">48u</span>
-          <span class="stat-label" data-i18n="stat3">Levering</span>
-        </div>
-      </div>
-    </div>
-    <div class="over-visual">
-      <div class="over-box">
-        <span>DK</span>
-      </div>
-    </div>
+  <section class="section reveal cta-band">
+    <h2>Klaar voor het WK 2026?</h2>
+    <p>Pak nu je kit en support je land in stijl.</p>
+    <a href="shop.html" class="btn btn-gold">Naar de shop</a>
   </section>
 
-  <!-- CONTACT / FOOTER -->
-  <footer class="footer" id="contact">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <p class="logo">DRIP<span>KITZ</span></p>
-        <p data-i18n="footer_sub">Jouw WK kit dealer. Snel. Betaalbaar. Strak.</p>
-        <div class="social-links">
-          <a href="#" class="social-btn">Instagram</a>
-          <a href="mailto:info@dripkitz.nl" class="social-btn">Email</a>
-        </div>
-      </div>
-      <div class="footer-links">
-        <h4 data-i18n="footer_shop">Shop</h4>
-        <a href="#collectie" data-i18n="nav_collectie">Collectie</a>
-        <a href="#" data-i18n="footer_maten">Maatgids</a>
-        <a href="#" data-i18n="footer_levering">Levering & Retour</a>
-      </div>
-      <div class="footer-links">
-        <h4 data-i18n="footer_info">Info</h4>
-        <a href="#over" data-i18n="nav_over">Over ons</a>
-        <a href="#contact" data-i18n="nav_contact">Contact</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 DripKitz — <span data-i18n="footer_rights">Alle rechten voorbehouden</span></p>
-    </div>
+  <footer class="site-footer">
+    <p>© 2026 DripKitz • Shop voor het WK 2026</p>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
