@@ -1,0 +1,4 @@
+# Resolve frequent static-site conflicts in favor of PR branch content
+DripKitz/*.html merge=ours
+DripKitz/*.css merge=ours
+DripKitz/*.js merge=ours
